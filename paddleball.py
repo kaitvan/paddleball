@@ -76,6 +76,7 @@ class Paddle:
             self.x = 2
 
     def start_game(self, event):
+        canvas.itemconfig(start_game_text, state='hidden')
         self.started = True
 
 
@@ -101,6 +102,7 @@ tk.update()
 score = Score(canvas, 'green')
 paddle = Paddle(canvas, 'blue')
 ball = Ball(canvas, paddle, score, 'red')
+start_game_text = canvas.create_text(250, 200, text='PRESS RETURN TO START', state='normal')
 game_over_text = canvas.create_text(250, 200, text='GAME OVER', state='hidden')
 
 
